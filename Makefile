@@ -1,5 +1,5 @@
 run:
-	poetry run python main.py data1.csv data2.csv data3.csv --report payoutк
+	poetry run python main.py data1.csv data2.csv data3.csv --report payout
 
 type:
 	poetry run mypy .
