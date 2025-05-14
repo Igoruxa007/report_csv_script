@@ -1,7 +1,7 @@
 from typing import List, Dict, Tuple
 
 
-def concole_output(data: List[Dict[str, str]]) -> None:
+def console_output(data: List[Dict[str, str]]) -> None:
     headers: List[Tuple[str, str, int]] = [
         ('Department', 'department', 20),
         ('Name', 'name', 20),
