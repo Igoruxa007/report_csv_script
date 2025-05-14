@@ -2,6 +2,8 @@ from typing import List, Dict
 
 from scripts.arg_parser import ArgumentParser
 from scripts.csv_reader import read_csv
+from scripts.reports import payout
+from scripts.output import concole_output
 
 
 def main() -> None:
@@ -13,7 +15,7 @@ def main() -> None:
     for file in args.path_to_files:
         read_csv(data, file)
 
-    print(data)
+    concole_output(payout(data=data))
 
 
 if __name__ == '__main__':

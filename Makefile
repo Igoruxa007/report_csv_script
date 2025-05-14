@@ -7,7 +7,5 @@ type:
 style:
 	poetry run flake8 .
 
-.PHONY: tests
-
 tests:
 	poetry run pytest .

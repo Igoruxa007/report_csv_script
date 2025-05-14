@@ -11,4 +11,8 @@ class ArgumentParser:
             'path_to_files',
             nargs='+',
         )
-        self.parser.add_argument('--report', type=str)
+
+        self.parser.add_argument(
+            '--report',
+            type=str,
+        )
