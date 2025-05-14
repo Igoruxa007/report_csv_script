@@ -1,16 +1,18 @@
-from typing import List
+from typing import List, Dict
 
-from arg_parser import ArgumentParser
-from csv_reader import read_csv
+from scripts.arg_parser import ArgumentParser
+from scripts.csv_reader import read_csv
 
 
 def main() -> None:
     argument_parser = ArgumentParser()
     args = argument_parser.parser.parse_args()
 
-    data: List[List[str]] = []
+    data: List[Dict[str, str]] = []
+
     for file in args.path_to_files:
         read_csv(data, file)
+
     print(data)
 
 
