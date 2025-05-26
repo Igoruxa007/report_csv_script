@@ -68,3 +68,21 @@ def test_read_csv_error_file_not_found(capsys):
     expected_output = ("Ошибка: файл 'file_path' не найден.\n")
 
     assert captured.out == expected_output
+
+
+def test_read_csv_unexpected_error(capsys):
+    with tempfile.NamedTemporaryFile(mode='w', delete=False, encoding='utf-8') as temp_file:
+        temp_file.write("id,email,name,department,hours_worked,hourly_rate\n")
+        temp_file_path = temp_file.name
+
+    try:
+        data = []
+
+        read_csv(data, os.path.dirname(temp_file_path))
+
+        captured = capsys.readouterr()
+
+        assert "Произошла ошибка при чтении файла" in captured.out
+
+    finally:
+        os.unlink(temp_file_path)
